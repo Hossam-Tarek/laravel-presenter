@@ -1,0 +1,18 @@
+{
+    "name": "hossam-tarek/laravel-presenter",
+    "description": "Introducing a Laravel Implementation of the Presenter Pattern",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "HossamTarek\\LaravelPresenter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hossam Tarek",
+            "email": "hossamtarek250@gmail.com"
+        }
+    ],
+    "require": {}
+}
