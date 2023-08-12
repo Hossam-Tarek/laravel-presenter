@@ -12,7 +12,7 @@ class MakePresenterCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:presenter {className} {--force}';
+    protected $signature = 'make:presenter {className}';
 
     /**
      * The console command description.
