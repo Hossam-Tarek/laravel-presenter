@@ -1,0 +1,17 @@
+<?php
+
+namespace {{namespace}};
+
+use HossamTarek\LaravelPresenter\Presenter;
+
+class {{className}} extends Presenter
+{
+    /**
+     * The underlying instance associated with the presenter.
+     *
+     * @var mixed
+     */
+    protected $model;
+
+    {{classContent}}
+}
