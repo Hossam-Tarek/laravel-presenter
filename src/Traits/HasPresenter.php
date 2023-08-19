@@ -10,7 +10,7 @@ trait HasPresenter
         try {
             return parent::__call($method, $parameters);
         } catch (\BadMethodCallException $e) {
-            $presenterObject = $this->getPresenterObject(self::$presenterName);
+            $presenterObject = $this->getPresenterObject();
             if (! method_exists($presenterObject, $method)) {
                 throw $e;
             }
@@ -26,11 +26,11 @@ trait HasPresenter
             return $parentValue;
         }
 
-        $presenterObject = $this->getPresenterObject(self::$presenterName);
+        $presenterObject = $this->getPresenterObject();
         $methodName = $this->snakeToCamelCase($name);
 
         return method_exists($presenterObject, $methodName) ?
-            $this->getPresenterObject(self::$presenterName)->{$methodName}() :
+            $this->getPresenterObject()->{$methodName}() :
             null;
     }
 
@@ -39,7 +39,7 @@ trait HasPresenter
         return str_replace(' ', '', lcfirst(ucwords(str_replace('_', ' ', $string))));
     }
 
-    private function getPresenterObject($className)
+    private function getPresenterObject()
     {
         return new self::$presenterName($this);
     }
